@@ -1,73 +1,58 @@
 slots:
-  cuisine:
+  SymptomName:
     type: text
-  people:
+  SymptomDuration:
     type: text
-  location:
+  SymptomLocation:
     type: text
-  price:
+  SymptomServerity:
     type: text
-  info:
-    type: text
-  days:
-    type: unfeaturized
-  number:
-    type: unfeaturized
   matches:
     type: unfeaturized
 
 entities:
-- location
-- info
-- people
-- price
-- cuisine
+- SymptomName
+- SymptomDuration
+- SymptomLocation
+- SymptomServerity
 
 intents:
- - greet
- - affirm
- - deny
- - inform
- - thankyou
- - request_info
+- tell_Affirm
+- tell_Deny
+- tell_Greet
+- tell_Thanks
+- tell_GoodBye
+- inform_Symptom
+- tell_inform
 
 responses:
-  utter_greet:
-    - text: "hey there!"
-  utter_goodbye:
-    - text: "goodbye :("
-    - text: "Bye-bye"
-  utter_default:
-    - text: "default message"
-  utter_ack_dosearch:
-    - text: "ok let me see what I can find"
-  utter_ack_findalternatives:
-    - text: "ok let me see what else there is"
-  utter_ack_makereservation:
-    - text: "ok making a reservation for restaurant (price={price} cuisine={cuisine}) in location={location} for count={people}? "
-      buttons:
-        - title: "thank you"
-          payload: "thank you"
-  utter_ask_cuisine:
-    - text: "what kind of cuisine would you like?"
-  utter_ask_howcanhelp:
-    - text: "how can I help you?"
-  utter_ask_location:
-    - text: "where?"
-  utter_ask_moreupdates:
-    - text: "if you'd like to modify anything else, please tell me what. This is what I currently have: {location} (price: {price}, cuisine: {cuisine}) for {people} people."
-  utter_ask_numpeople:
-    - text: "for how many people?"
-  utter_ask_price:
-    - text: "in which price range?"
-      buttons:
-      - title: "cheap"
-        payload: "cheap"
-      - title: "expensive"
-        payload: "expensive"
-  utter_on_it:
-    - text: "I'm on it"
+  utter_say_Greet:
+  - text: Good morning!
+  - text: Hello, how can I help you?
+  utter_ack:
+  - text: I see
+  - text: right
+  - text: ok
+  utter_ask_Symptom:
+  - text: What's wrong?
+  - text: What seems to be the problem?
+  - text: Where does it hurt?
+  utter_ask_WhatElse:
+  - text: Do you have any other symptoms other than (SymptomName={SymptomName})?
+  utter_ask_SymptomDuration:
+  - text: how long have you had it?
+  utter_say_Diagnosis:
+  - text: Well, it sounds like you've caught the flu.
+  utter_say_Prescription:
+  - text: Let me prescribe some medication. Drink a lot of water and take plenty of
+      rest.
+  utter_say_Goodbye:
+  - text: You're welcome! Take care!
 
 actions:
 - action_search_restaurants
 - action_suggest
+
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 60

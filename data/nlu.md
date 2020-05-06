@@ -1,4 +1,4 @@
-## intent:affirm
+## intent:tell_Affirm
 - yes
 - yea
 - yeah
@@ -33,7 +33,7 @@
 - certainly
 - of course
 
-## intent:deny
+## intent:tell_Deny
 - no
 - not really
 - uh no
@@ -41,7 +41,7 @@
 - nope
 - nada
 
-## intent:greet
+## intent:tell_Greet
 - hi
 - hi there
 - hello
@@ -60,7 +60,7 @@
 - wassup
 - greetings
 
-## intent:thankyou
+## intent:tell_Thanks
 - thanks
 - thank you
 - thanks a lot
@@ -71,7 +71,7 @@
 - cool thanks
 - cheers
 
-## intent:goodbye
+## intent:tell_GoodBye
 - bye
 - good bye
 - goodbye
@@ -82,43 +82,24 @@
 - take care
 - cheerio
 
-## intent:ask_see_doctor
-- hello, can I see the doctor right now?
-- hello, may I see the doctor today?
-- I would like to see the doctor
-- I need to see the doctor
-
-## intent:request_appointment
-- can I make an appointment?
-- can I make an appointment for [today](week_day)?
-- can I make an appointment for [tomorrow](week_day)?
-- [monday](week_day)?
-- [tuesday](week_day)?
-- [wednesday](week_day)?
-- [monday](week_day)?
-- [thursday](week_day)?
-- [friday](week_day)?
-- [saturday](week_day)?
-- [sunday](week_day)?
-
-## intent:inform_symptom
-- I have a [temperature](symptom_name)
-- About [two days](symptom_duration)
-- About [one week](symptom_duration)
-- [fever](symptom_name)
-- [headache](symptom_name)
-- [upset stomach](symptom_name)
-- I have a [fever](symptom_name)
-- I also have dull [ache](symptom_name)
-- three [days](symptom_duration)
-- my [stomach](symptom_name) hurts
-- [dry mouth](symptom_name)
-- [body ache](symptom_name)
-- [runny nose](symptom_name)
-- [weeks](symptom_duration)
-- [day](symptom_duration)
-- [days](symptom_duration)
-- [month](symptom_duration)
-- [months](symptom_duration)
-- i have [fever](symptom_name)
-- I had it for [two days](symptom_duration)
+## intent:inform_Symptom
+- I have a [temperature](SymptomName)
+- About [two days](SymptomDuration)
+- About [one week](SymptomDuration)
+- [fever](SymptomName)
+- [headache](SymptomName)
+- [upset stomach](SymptomName)
+- I have a [fever](SymptomName)
+- I also have dull [ache](SymptomName)
+- three [days](SymptomDuration)
+- my [stomach](SymptomName) hurts
+- [dry mouth](SymptomName)
+- [body ache](SymptomName)
+- [runny nose](SymptomName)
+- [weeks](SymptomDuration)
+- [day](SymptomDuration)
+- [days](SymptomDuration)
+- [month](SymptomDuration)
+- [months](SymptomDuration)
+- i have [fever](SymptomName)
+- I had it for [two days](SymptomDuration)
