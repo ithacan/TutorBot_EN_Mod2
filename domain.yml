@@ -1,57 +1,74 @@
+actions:
+- action_search_specialist
+- action_recommend
+- utter_ack
+- utter_ask_Symptom
+- utter_ask_SymptomDuration
+- utter_ask_WhatElse
+- utter_say_Diagnosis
+- utter_say_GoOn
+- utter_say_Goodbye
+- utter_say_Greet
+- utter_say_Prescription
+- utter_say_Referral
 slots:
-  SymptomName:
-    type: text
   SymptomDuration:
     type: text
   SymptomLocation:
     type: text
+  SymptomName:
+    type: text
   SymptomServerity:
+    type: text
+  Specialist:
     type: text
   matches:
     type: unfeaturized
-
 entities:
-- SymptomName
 - SymptomDuration
 - SymptomLocation
+- SymptomName
 - SymptomServerity
-
 intents:
+- tell_Greet
+- tell_Goodbye
+- inform_Symptom
 - tell_Affirm
 - tell_Deny
-- tell_Greet
 - tell_Thanks
-- tell_GoodBye
-- inform_Symptom
-- tell_inform
-
 responses:
-  utter_say_Greet:
-  - text: Good morning!
-  - text: Hello, how can I help you?
   utter_ack:
   - text: I see
   - text: right
   - text: ok
   utter_ask_Symptom:
-  - text: What's wrong?
-  - text: What seems to be the problem?
-  - text: Where does it hurt?
-  utter_ask_WhatElse:
-  - text: Do you have any other symptoms other than (SymptomName={SymptomName})?
+  - text: How can I help you?
+  - text: So what seems to be the problem?
+  - text: So what brought you here?
   utter_ask_SymptomDuration:
-  - text: how long have you had it?
+  - text: how long have you had {SymptomName}?
+  utter_ask_WhatElse:
+  - buttons:
+    - payload: yes
+      title: yes
+    - payload: no
+      title: no
+    text: Do you have other symptoms other than {SymptomName}?
   utter_say_Diagnosis:
   - text: Well, it sounds like you've caught the flu.
+  utter_say_GoOn:
+  - text: go on
+  - text: shoot
+  utter_say_Goodbye:
+  - text: You're welcome! Take care!
+  utter_say_Greet:
+  - text: Good morning!
+  - text: Hello!
   utter_say_Prescription:
   - text: Let me prescribe some medication. Drink a lot of water and take plenty of
       rest.
-  utter_say_Goodbye:
-  - text: You're welcome! Take care!
-
-actions:
-- action_search_restaurants
-- action_suggest
+  utter_say_Referral:
+  - text: Unfortunately, I will have to send you to a specialist. Let me do a search.
 
 session_config:
   carry_over_slots_to_new_session: true

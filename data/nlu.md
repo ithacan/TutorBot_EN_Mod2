@@ -71,7 +71,7 @@
 - cool thanks
 - cheers
 
-## intent:tell_GoodBye
+## intent:tell_Goodbye
 - bye
 - good bye
 - goodbye
@@ -103,3 +103,8 @@
 - [months](SymptomDuration)
 - i have [fever](SymptomName)
 - I had it for [two days](SymptomDuration)
+- I have a [dry mouth](SymptomName)
+- two [days](SymptomDuration)
+- I have a [stomach ache](SymptomName)
+- I have a high [fever](SymptomName)
+- 3 [months](SymptomDuration)
