@@ -2,23 +2,23 @@ from rasa_sdk import Action
 from rasa_sdk.events import SlotSet
 
 
-class getSpecialistAPI:
+class get_specialistAPI:
     def search(self, info):
         return "Doctor Goodbridge at High street"
 
 
-class ActionSearchSpecialist(Action):
+class Action_searchSpecialist(Action):
     def name(self):
-        return "action_search_specialist"
+        return "action_searchSpecialist"
 
     def run(self, dispatcher, tracker, domain):
         dispatcher.utter_message(text="looking for specialist")
-        FindSpecialist_api = getSpecialistAPI()
+        FindSpecialist_api = get_specialistAPI()
         specialists = FindSpecialist_api.search(tracker.get_slot("Specialist"))
         return [SlotSet("matches", specialists)]
 
 
-class ActionRecommend(Action):
+class Action_Recommend(Action):
     def name(self):
         return "action_recommend"
 

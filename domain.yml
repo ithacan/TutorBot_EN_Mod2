@@ -1,17 +1,110 @@
 actions:
-- action_search_specialist
 - action_recommend
-- utter_ack
-- utter_ask_Symptom
-- utter_ask_SymptomDuration
-- utter_ask_WhatElse
-- utter_say_Diagnosis
-- utter_say_GoOn
-- utter_say_Goodbye
-- utter_say_Greet
-- utter_say_Prescription
-- utter_say_Referral
+- action_searchSpecialist
+- utter_acknowledge
+- utter_askAppointmentFriday
+- utter_askAppointmentTomorrow
+- utter_askChooseTime
+- utter_askHasAppointment
+- utter_askMakeAppointment
+- utter_askName
+- utter_askSymptom
+- utter_askSymptomDuration
+- utter_askWhatElse
+- utter_goodbye
+- utter_greet
+- utter_sayGoOn
+- utter_tellDiagnosis
+- utter_tellMadeAppointment
+- utter_tellPrescription
+- utter_tellReferral
+entities:
+- AppointmentDate
+- PatientName
+- SymptomDuration
+- SymptomLocation
+- SymptomName
+- SymptomServerity
+intents:
+- intent_askSeeDoctor
+- intent_denyHaveAppointment
+- intent_goodbye
+- intent_tellName
+- intent_agreeTo
+- intent_thank
+- intent_greet
+- intent_affirm
+- intent_deny
+- intent_tellSymptom
+responses:
+  utter_acknowledge:
+  - text: I see
+  - text: right
+  - text: ok
+  utter_askAppointmentFriday:
+  - text: I see. How about Friday?
+  utter_askAppointmentTomorrow:
+  - text: Right. Shall I book you for tomorrow?
+  utter_askChooseTime:
+  - buttons:
+    - payload: ten AM
+      title: ten AM
+    - payload: two PM
+      title: two PM
+    - payload: other time
+      title: othe time
+    text: What time are you available?
+  utter_askHasAppointment:
+  - text: Do you have an appointment?
+  utter_askMakeAppointment:
+  - buttons:
+    - payload: yes
+      title: yes
+    - payload: no
+      title: no
+    text: You need to have an apointment. Would you like to make it now?
+  utter_askName:
+  - text: Ok, may I have your full name please?
+  utter_askSymptom:
+  - text: How can I help you?
+  - text: So what seems to be the problem?
+  - text: So what brought you here?
+  utter_askSymptomDuration:
+  - text: how long have you had {SymptomName}?
+  utter_askWhatElse:
+  - buttons:
+    - payload: yes
+      title: yes
+    - payload: no
+      title: no
+    text: Do you have other symptoms other than {SymptomName}?
+  utter_goodbye:
+  - text: You're welcome! Take care!
+  utter_greet:
+  - text: Good morning!
+  - text: Hello!
+  utter_sayGoOn:
+  - text: go on
+  - text: shoot
+  utter_tellDiagnosis:
+  - text: Well, it sounds like you've caught the flu.
+  utter_tellMadeAppointment:
+  - text: Ok, I have made you an appointment for {AppointmentDate}.
+  utter_tellPrescription:
+  - text: Let me prescribe some medication. Drink a lot of water and take plenty of
+      rest.
+  utter_tellReferral:
+  - text: Unfortunately, I will have to send you to a specialist. Let me do a search.
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 60
 slots:
+  AppointmentDate:
+    type: text
+  PatientName:
+    type: text
+  Specialist:
+    type: text
   SymptomDuration:
     type: text
   SymptomLocation:
@@ -20,56 +113,5 @@ slots:
     type: text
   SymptomServerity:
     type: text
-  Specialist:
-    type: text
   matches:
     type: unfeaturized
-entities:
-- SymptomDuration
-- SymptomLocation
-- SymptomName
-- SymptomServerity
-intents:
-- tell_Greet
-- tell_Goodbye
-- inform_Symptom
-- tell_Affirm
-- tell_Deny
-- tell_Thanks
-responses:
-  utter_ack:
-  - text: I see
-  - text: right
-  - text: ok
-  utter_ask_Symptom:
-  - text: How can I help you?
-  - text: So what seems to be the problem?
-  - text: So what brought you here?
-  utter_ask_SymptomDuration:
-  - text: how long have you had {SymptomName}?
-  utter_ask_WhatElse:
-  - buttons:
-    - payload: yes
-      title: yes
-    - payload: no
-      title: no
-    text: Do you have other symptoms other than {SymptomName}?
-  utter_say_Diagnosis:
-  - text: Well, it sounds like you've caught the flu.
-  utter_say_GoOn:
-  - text: go on
-  - text: shoot
-  utter_say_Goodbye:
-  - text: You're welcome! Take care!
-  utter_say_Greet:
-  - text: Good morning!
-  - text: Hello!
-  utter_say_Prescription:
-  - text: Let me prescribe some medication. Drink a lot of water and take plenty of
-      rest.
-  utter_say_Referral:
-  - text: Unfortunately, I will have to send you to a specialist. Let me do a search.
-
-session_config:
-  carry_over_slots_to_new_session: true
-  session_expiration_time: 60

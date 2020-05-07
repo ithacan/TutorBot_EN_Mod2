@@ -1,19 +1,5 @@
-## intent:tell_Affirm
+## intent:intent_affirm
 - yes
-- yea
-- yeah
-- yes yes
-- yes yes yes
-- uh yes
-- um yes
-- ok
-- okay
-- yes ok
-- thats ok
-- that's ok
-- fine
-- that's fine
-- thats fine
 - right
 - yes right
 - thats right
@@ -21,6 +7,19 @@
 - correct
 - thats correct
 - that's correct
+
+## intent:intent_agreeTo
+- yes
+- yea
+- yeah
+- yes yes
+- yes yes yes
+- uh yes
+- um yes
+- fine
+- ok
+- okay
+- yes ok
 - let's do it
 - lets do it
 - yeah let's do it
@@ -33,7 +32,7 @@
 - certainly
 - of course
 
-## intent:tell_Deny
+## intent:intent_deny
 - no
 - not really
 - uh no
@@ -41,7 +40,7 @@
 - nope
 - nada
 
-## intent:tell_Greet
+## intent:intent_greet
 - hi
 - hi there
 - hello
@@ -60,7 +59,7 @@
 - wassup
 - greetings
 
-## intent:tell_Thanks
+## intent:intent_thank
 - thanks
 - thank you
 - thanks a lot
@@ -71,7 +70,7 @@
 - cool thanks
 - cheers
 
-## intent:tell_Goodbye
+## intent:intent_goodbye
 - bye
 - good bye
 - goodbye
@@ -82,7 +81,7 @@
 - take care
 - cheerio
 
-## intent:inform_Symptom
+## intent:intent_tellSymptom
 - I have a [temperature](SymptomName)
 - About [two days](SymptomDuration)
 - About [one week](SymptomDuration)
@@ -108,3 +107,24 @@
 - I have a [stomach ache](SymptomName)
 - I have a high [fever](SymptomName)
 - 3 [months](SymptomDuration)
+
+## intent:intent_askSeeDoctor
+- Hello, may I see the doctor now?
+- Can I see the doctor?
+- I would like to see the doctor.
+- May I see the doctor?
+
+## intent:intent_denyHaveAppointment
+- No I don't have an appointment
+- No
+- I did not make an appointment
+- no appointment
+- Sorry no
+- no
+
+## intent:intent_tellName
+- My name is [John Doe](PatientName)
+- Name is [John Doe](PatientName)
+- Doe, [John Doe](PatientName)
+- [John Doe](PatientName)
+- [John Doe](PatientName)
