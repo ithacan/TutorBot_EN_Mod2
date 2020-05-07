@@ -11,9 +11,11 @@ actions:
 - utter_askSymptom
 - utter_askSymptomDuration
 - utter_askWhatElse
+- utter_default
 - utter_goodbye
 - utter_greet
 - utter_sayGoOn
+- utter_tellCantHelp
 - utter_tellDiagnosis
 - utter_tellMadeAppointment
 - utter_tellPrescription
@@ -26,16 +28,16 @@ entities:
 - SymptomName
 - SymptomServerity
 intents:
-- intent_askSeeDoctor
-- intent_denyHaveAppointment
 - intent_goodbye
-- intent_tellName
+- intent_tellSymptom
+- intent_denyHaveAppointment
 - intent_agreeTo
-- intent_thank
 - intent_greet
+- intent_thank
+- intent_askSeeDoctor
+- intent_tellName
 - intent_affirm
 - intent_deny
-- intent_tellSymptom
 responses:
   utter_acknowledge:
   - text: I see
@@ -78,6 +80,9 @@ responses:
     - payload: no
       title: no
     text: Do you have other symptoms other than {SymptomName}?
+  utter_default:
+  - text: You don't make sense. Please rephrase!
+  - text: Your response is incorrect. Try again!
   utter_goodbye:
   - text: You're welcome! Take care!
   utter_greet:
@@ -86,6 +91,9 @@ responses:
   utter_sayGoOn:
   - text: go on
   - text: shoot
+  utter_tellCantHelp:
+  - text: Sorry, doctor does not see patient without an appointment. You have to go
+      elsewhere.
   utter_tellDiagnosis:
   - text: Well, it sounds like you've caught the flu.
   utter_tellMadeAppointment:

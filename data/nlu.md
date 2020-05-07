@@ -31,6 +31,8 @@
 - definitely
 - certainly
 - of course
+- alright
+- well
 
 ## intent:intent_deny
 - no
@@ -107,12 +109,20 @@
 - I have a [stomach ache](SymptomName)
 - I have a high [fever](SymptomName)
 - 3 [months](SymptomDuration)
+- I have a [knee](SymptomName) problem
+- 2 [days](SymptomDuration)
+- I have a [fever](SymptomName)
+- 2 [days](SymptomDuration)
+- high [temperature](SymptomName)
+- [fever](SymptomName)
+- 2 [months](SymptomDuration)
 
 ## intent:intent_askSeeDoctor
 - Hello, may I see the doctor now?
 - Can I see the doctor?
 - I would like to see the doctor.
 - May I see the doctor?
+- I need to see the doctor right now
 
 ## intent:intent_denyHaveAppointment
 - No I don't have an appointment
@@ -126,5 +136,4 @@
 - My name is [John Doe](PatientName)
 - Name is [John Doe](PatientName)
 - Doe, [John Doe](PatientName)
-- [John Doe](PatientName)
 - [John Doe](PatientName)

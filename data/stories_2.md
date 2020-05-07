@@ -36,8 +36,9 @@
 > 2A13
 > 2A13
 * intent_goodbye
+- action_restart
 
-## interactive_story_1
+## interactive_story_2_B
 * intent_askSeeDoctor
     - utter_askHasAppointment
 * intent_denyHaveAppointment
@@ -52,3 +53,14 @@
 * intent_thank
     - utter_goodbye
 * intent_goodbye
+
+## interactive_story_2_C
+* intent_askSeeDoctor
+    - utter_askHasAppointment
+* intent_denyHaveAppointment
+    - utter_askMakeAppointment
+* intent_deny
+    - utter_tellCantHelp
+* intent_affirm OR intent_agreeTo OR intent_goodbye
+    - utter_goodbye
+
