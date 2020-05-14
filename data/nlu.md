@@ -111,10 +111,7 @@
 - 3 [months](SymptomDuration)
 - I have a [knee](SymptomName) problem
 - 2 [days](SymptomDuration)
-- I have a [fever](SymptomName)
-- 2 [days](SymptomDuration)
 - high [temperature](SymptomName)
-- [fever](SymptomName)
 - 2 [months](SymptomDuration)
 
 ## intent:intent_askSeeDoctor
