@@ -1,32 +1,6 @@
-actions:
-- action_recommend
-- action_searchSpecialist
-- utter_acknowledge
-- utter_askAppointmentFriday
-- utter_askAppointmentTomorrow
-- utter_askChooseTime
-- utter_askHasAppointment
-- utter_askMakeAppointment
-- utter_askName
-- utter_askSymptom
-- utter_askSymptomDuration
-- utter_askWhatElse
-- utter_default
-- utter_goodbye
-- utter_greet
-- utter_sayGoOn
-- utter_tellCantHelp
-- utter_tellDiagnosis
-- utter_tellMadeAppointment
-- utter_tellPrescription
-- utter_tellReferral
-entities:
-- AppointmentDate
-- PatientName
-- SymptomDuration
-- SymptomLocation
-- SymptomName
-- SymptomServerity
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 intents:
 - intent_goodbye
 - intent_tellSymptom
@@ -38,6 +12,32 @@ intents:
 - intent_tellName
 - intent_affirm
 - intent_deny
+- intent_sayTwoPM
+entities:
+- AppointmentDate
+- PatientName
+- SymptomDuration
+- SymptomLocation
+- SymptomName
+- SymptomServerity
+- SymptomDuartion
+slots:
+  AppointmentDate:
+    type: text
+  PatientName:
+    type: text
+  Specialist:
+    type: text
+  SymptomDuration:
+    type: text
+  SymptomLocation:
+    type: text
+  SymptomName:
+    type: text
+  SymptomServerity:
+    type: text
+  matches:
+    type: unfeaturized
 responses:
   utter_acknowledge:
   - text: I see
@@ -59,12 +59,7 @@ responses:
   utter_askHasAppointment:
   - text: Do you have an appointment?
   utter_askMakeAppointment:
-  - buttons:
-    - payload: yes
-      title: yes
-    - payload: no
-      title: no
-    text: You need to have an apointment. Would you like to make it now?
+  - text: You need to have an apointment. Would you like to make it now?
   utter_askName:
   - text: Ok, may I have your full name please?
   utter_askSymptom:
@@ -103,23 +98,32 @@ responses:
       rest.
   utter_tellReferral:
   - text: Unfortunately, I will have to send you to a specialist. Let me do a search.
-session_config:
-  carry_over_slots_to_new_session: true
-  session_expiration_time: 60
-slots:
-  AppointmentDate:
-    type: text
-  PatientName:
-    type: text
-  Specialist:
-    type: text
-  SymptomDuration:
-    type: text
-  SymptomLocation:
-    type: text
-  SymptomName:
-    type: text
-  SymptomServerity:
-    type: text
-  matches:
-    type: unfeaturized
+  utter_utter_tellFoundAppointment:
+  - text: Right. I found your appointment. Please wait until called.
+  utter_utter_thanks:
+  - text: Thank you!
+  - text: Thanks!
+actions:
+- action_recommend
+- action_searchSpecialist
+- utter_acknowledge
+- utter_askAppointmentFriday
+- utter_askAppointmentTomorrow
+- utter_askChooseTime
+- utter_askHasAppointment
+- utter_askMakeAppointment
+- utter_askName
+- utter_askSymptom
+- utter_askSymptomDuration
+- utter_askWhatElse
+- utter_default
+- utter_goodbye
+- utter_greet
+- utter_sayGoOn
+- utter_tellCantHelp
+- utter_tellDiagnosis
+- utter_tellMadeAppointment
+- utter_tellPrescription
+- utter_tellReferral
+- utter_utter_tellFoundAppointment
+- utter_utter_thanks

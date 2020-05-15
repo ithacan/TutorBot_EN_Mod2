@@ -41,6 +41,7 @@
 - no thanks
 - nope
 - nada
+- no I cannot make it tomorrow
 
 ## intent:intent_greet
 - hi
@@ -134,3 +135,6 @@
 - Name is [John Doe](PatientName)
 - Doe, [John Doe](PatientName)
 - [John Doe](PatientName)
+
+## intent:intent_sayTwoPM
+- two PM
