@@ -33,6 +33,7 @@
 - of course
 - alright
 - well
+- It sounds great
 
 ## intent:intent_deny
 - no
@@ -61,6 +62,8 @@
 - howdy
 - wassup
 - greetings
+- Good afternoon.
+- Good afternoon
 
 ## intent:intent_thank
 - thanks
@@ -138,3 +141,13 @@
 
 ## intent:intent_sayTwoPM
 - two PM
+
+## intent:intent_defer
+- Maybe next time
+
+## intent:intent_question
+- Can I ask you something?
+
+## intent:intent_askName
+- What is your name?
+- How can I call you?
